@@ -43,7 +43,7 @@ class _homePageState extends State<homePage> {
         ),
         description: const Text('You must be done!'),
 
-        animationDuration: const Duration(milliseconds: 10000),
+        animationDuration: const Duration(milliseconds: 9000),
       ).show(context);
 
       position:
@@ -96,7 +96,7 @@ class _homePageState extends State<homePage> {
                   Container(
                     margin: EdgeInsets.only(left: 30),
                     child: CircularCountDownTimer(
-                      duration: 3,
+                      duration: 10,
                       initialDuration: 0,
                       controller: _controller,
                       width: MediaQuery.of(context).size.width / 6,
