@@ -4,18 +4,18 @@ import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 //import 'package:quiz/Model.dart/questions_model.dart';
 
-class homePage extends StatefulWidget {
+class homePage2 extends StatefulWidget {
   //const homePage({Key? key}) : super(key: key);
   //final List options;
 
   @override
-  State<homePage> createState() => _homePageState();
+  State<homePage2> createState() => _homePage2State();
 }
 
-class _homePageState extends State<homePage> {
+class _homePage2State extends State<homePage2> {
   @override
   final CountDownController _controller = CountDownController();
-  List<String> options = ['Google', 'Apple', 'Facebook', 'Microsoft'];
+  List<String> options1 = ['Jun 2017', 'Jun 2017', 'May 2017', 'May 2018'];
 
   List<String> Questions = [
     "Flutter is an open-source UI software development kit created by ______",
@@ -43,7 +43,7 @@ class _homePageState extends State<homePage> {
         ),
         description: const Text('You must be done!'),
 
-        animationDuration: const Duration(milliseconds: 10000),
+        animationDuration: const Duration(milliseconds: 5000),
       ).show(context);
 
       position:
@@ -132,7 +132,7 @@ class _homePageState extends State<homePage> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                       child: Text(
-                        Questions[0],
+                        Questions[1],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 15,
@@ -149,77 +149,52 @@ class _homePageState extends State<homePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      //GestureDetector(
-                      //onTap: () => Navigator.pushNamed(context, '/second'),
-                      // child:
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: InkWell(
-                          onTap: () => Navigator.pushNamed(context, '/second'),
-
-                          child: Container(
-                            width: 150,
-                            height: 100,
-                            color: Color(0xff6c6996),
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 40.0),
-                              child: Text(
-                                options[0],
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                          //)
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () => showDialog<void>(
-                            context: context,
-                            barrierDismissible: false, // user must tap button!
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                  title: const Text('TRY AGAIN'),
-                                  content: SingleChildScrollView(
-                                    child: ListBody(
-                                      children: const <Widget>[
-                                        Text('Wrong!!!!'),
-                                      ],
-                                    ),
-                                  ),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      child: const Text('ok'),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ]);
-                            }),
+                      GestureDetector(
+                        onTap: () => Navigator.pushNamed(context, '/second'),
                         child: Padding(
                             padding: const EdgeInsets.all(5.0),
                             child: ClipRRect(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
                               child: Container(
+                                width: 150,
+                                height: 100,
+                                color: Color(0xff6c6996),
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 40.0),
                                   child: Text(
-                                    options[1],
+                                    options1[0],
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 20,
                                       color: Color(0xffffffff),
                                     ),
                                   ),
                                 ),
-                                width: 150,
-                                height: 100,
-                                color: Color(0xff6c6996),
                               ),
                             )),
-                      )
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(40)),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 40.0),
+                                child: Text(
+                                  options1[1],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xffffffff),
+                                  ),
+                                ),
+                              ),
+                              width: 150,
+                              height: 100,
+                              color: Color(0xff6c6996),
+                            ),
+                          )),
                     ],
                   ),
                   Row(
@@ -228,92 +203,44 @@ class _homePageState extends State<homePage> {
                     children: [
                       Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: InkWell(
-                            onTap: () => showDialog<void>(
-                                context: context,
-                                barrierDismissible:
-                                    false, // user must tap button!
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                      title: const Text('TRY AGAIN'),
-                                      content: SingleChildScrollView(
-                                        child: ListBody(
-                                          children: const <Widget>[
-                                            Text('Wrong!!!!'),
-                                          ],
-                                        ),
-                                      ),
-                                      actions: <Widget>[
-                                        TextButton(
-                                          child: const Text('ok'),
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      ]);
-                                }),
-                            child: ClipRRect(
-                              child: Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 40.0),
-                                  child: Text(
-                                    options[2],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Color(0xffffffff),
-                                    ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(40)),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 40.0),
+                                child: Text(
+                                  options1[2],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xffffffff),
                                   ),
                                 ),
-                                width: 150,
-                                height: 100,
-                                color: Color(0xff6c6996),
                               ),
+                              width: 150,
+                              height: 100,
+                              color: Color(0xff6c6996),
                             ),
                           )),
                       Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: InkWell(
-                            onTap: () => showDialog<void>(
-                                context: context,
-                                barrierDismissible:
-                                    false, // user must tap button!
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                      title: const Text('TRY AGAIN'),
-                                      content: SingleChildScrollView(
-                                        child: ListBody(
-                                          children: const <Widget>[
-                                            Text('Wrong!!!!'),
-                                          ],
-                                        ),
-                                      ),
-                                      actions: <Widget>[
-                                        TextButton(
-                                          child: const Text('ok'),
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      ]);
-                                }),
-                            child: ClipRRect(
-                              child: Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 40.0),
-                                  child: Text(
-                                    options[3],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Color(0xffffffff),
-                                    ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(40)),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 40.0),
+                                child: Text(
+                                  options1[3],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xffffffff),
                                   ),
                                 ),
-                                width: 150,
-                                height: 100,
-                                color: Color(0xff6c6996),
                               ),
+                              width: 150,
+                              height: 100,
+                              color: Color(0xff6c6996),
                             ),
                           )),
                     ],
