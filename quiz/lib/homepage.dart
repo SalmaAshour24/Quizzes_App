@@ -74,7 +74,6 @@ class _homePageState extends State<homePage> {
                     "Flutter",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'Lora-VariableFont_wght',
                       fontSize: 25,
                       color: Color(0xffffffff),
                     ),
@@ -353,7 +352,6 @@ class _homePageState extends State<homePage> {
   }
 }
 
-// ignore: must_be_immutable
 class AnswerWidget extends StatelessWidget {
   AnswerWidget(this.options1, {Key? key}) : super(key: key);
 
